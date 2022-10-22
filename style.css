@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #212230;
+}
+.container {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    border-radius: 15px;
+    box-shadow: 0 0 6px black;
+}
+
+
+.exploreBtn span {
+    letter-spacing: 0.1em;
+    font-size: 1.75em;
+    font-weight: 500;
+    color: white;
+    display: inline-block;
+    z-index: 2;
+    transition: 0.5s ease-in-out;
+}
+.exploreBtn {
+    position: relative;
+    width: 220px;
+    height: 65px;
+    text-decoration: none;
+    background: #212230;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 5px 8px;
+    box-shadow: 0 0 4px black;
+}
+.exploreBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: orangered;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+.exploreBtn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.exploreBtn:hover span {
+    color: #333;
+}
+.exploreBtn i {
+    position: relative;
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    background: orangered;
+    transition: 0.5s, width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.5s, 1s;
+}
+.exploreBtn:hover i {
+    width: 35px;
+    height: 4px;
+    background: #333;
+    transition-delay: 0s, 1s, 0.5s;
+}
+.exploreBtn i::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 40%;
+    height: 3px;
+    background: transparent;
+    rotate: 0;
+    transform-origin: right;
+    transition: 1s;
+}
+.exploreBtn:hover i::before {
+    background: #333;
+    rotate: 45deg;
+    transition-delay: 1s;
+}
+.exploreBtn i::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 40%;
+    height: 3px;
+    background: transparent;
+    rotate: 0;
+    transform-origin: right;
+    transition: 1s;
+}
+.exploreBtn:hover i::after {
+    background: #333;
+    rotate: -45deg;
+    transition-delay: 1s;
+}
